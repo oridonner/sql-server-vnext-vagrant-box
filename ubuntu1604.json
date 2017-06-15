@@ -9,6 +9,6 @@
   "iso_url": "http://releases.ubuntu.com/16.04/ubuntu-16.04.2-server-amd64.iso",
   "memory": "3512",
   "preseed" : "preseed.cfg",
-  "version": "2.0.1",
+  "version": "2.1.1",
   "hostname": "mssql-vnext"
 }
