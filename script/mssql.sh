@@ -19,8 +19,8 @@ sudo apt-get install -y mssql-server-agent
 # sql server instatiation
 sudo /bin/bash -c "export SA_PASSWORD='vnext@2017'; /opt/mssql/bin/mssql-conf setup accept-eula"
 
-# sqlcmd and bcp unattended installation
-export DEBIAN_FRONTEND=noninteractive
-apt-get update -q
-apt-get install -q -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" mssql-tools unixodbc-dev
-
+# sqlcmd and bcp unattended / noninteractive installation
+# https://stackoverflow.com/questions/42383680/ubuntu-silent-install-of-mssql-tools-and-unixodbc-dev-automatically-accept-eul
+sudo apt-get update -q -y
+ACCEPT_EULA=y DEBIAN_FRONTEND=noninteractive \
+apt-get install -y --no-install-recommends mssql-tools unixodbc-dev
